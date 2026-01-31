@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext';
 import { Trash2, Send, ShoppingBag } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
+import { API_URL } from '../config';
 const cartHeaderBg = 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'; // Food preparation
 
 const PageHeader = ({ title }) => (
@@ -43,7 +44,7 @@ export default function Cart() {
             status: 'Pending'
         };
 
-        fetch('http://127.0.0.1:8000/api/inquiries/', {
+        fetch(`${API_URL}/api/inquiries/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

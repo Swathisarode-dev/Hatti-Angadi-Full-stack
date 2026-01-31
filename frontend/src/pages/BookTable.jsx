@@ -3,6 +3,8 @@ import { Calendar, Clock, Users, Phone, User } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Reveal } from '../components/Reveal';
 
+import { API_URL } from '../config';
+
 const PageHeader = ({ title }) => (
     <div style={{
         backgroundColor: 'var(--color-secondary)',
@@ -60,7 +62,7 @@ export default function BookTable() {
             status: 'Confirmed'
         };
 
-        fetch('http://127.0.0.1:8000/api/table-bookings/', {
+        fetch(`${API_URL}/api/table-bookings/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)

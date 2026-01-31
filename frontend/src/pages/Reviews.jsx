@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Star, User, MessageCircle } from 'lucide-react';
 import { Reveal } from '../components/Reveal';
+import { API_URL } from '../config';
 const reviewsBg = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'; // Food background
 
 const PageHeader = ({ title, subtitle }) => (
@@ -29,7 +30,7 @@ export default function Reviews() {
     const [message, setMessage] = useState(null);
 
     const fetchReviews = () => {
-        fetch('http://127.0.0.1:8000/api/reviews/')
+        fetch(`${API_URL}/api/reviews/`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data);
@@ -48,7 +49,7 @@ export default function Reviews() {
     const handleSubmit = (e) => {
         e.preventDefault();
         setSubmitting(true);
-        fetch('http://127.0.0.1:8000/api/reviews/', {
+        fetch(`${API_URL}/api/reviews/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)

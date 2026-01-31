@@ -1,0 +1,7 @@
+django>=5.0.0
+django-cors-headers
+djangorestframework
+dj-database-url
+gunicorn
+whitenoise
+pillow

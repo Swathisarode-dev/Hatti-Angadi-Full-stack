@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Plus } from 'lucide-react';
 import { Reveal } from '../components/Reveal';
+import { API_URL } from '../config';
 const menuHeaderBg = 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80'; // Traditional Indian food spread
 
 const PageHeader = ({ title, subtitle }) => (
@@ -28,7 +29,7 @@ export default function Menu() {
     const { addToCart } = useCart();
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/api/categories/')
+        fetch(`${API_URL}/api/categories/`)
             .then(res => res.json())
             .then(data => {
                 setCategories(data);
