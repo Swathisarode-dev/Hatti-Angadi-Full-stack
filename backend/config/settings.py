@@ -96,7 +96,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}',
+        default='postgres://postgres:Deepu%402005@localhost:5432/demodb',
         conn_max_age=600
     )
 }
