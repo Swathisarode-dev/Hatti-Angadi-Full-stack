@@ -2,7 +2,8 @@ django>=5.0.0
 django-cors-headers
 djangorestframework
 dj-database-url
+python-dotenv
 gunicorn
 whitenoise
-psycopg2-binary
+psycopg2
 pillow
