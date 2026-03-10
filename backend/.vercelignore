@@ -1,0 +1,12 @@
+*.pyc
+__py cache__/
+db.sqlite3
+.env
+.ven v
+ven v/
+*.log
+.DS_Store
+.git/
+.gitignore
+README.md
+*.md
